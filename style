@@ -1,0 +1,664 @@
+/* ==========================================================================
+   SYSTEM DESIGN - PALETA DE CORES E ESCOPO DE VARIÁVEIS (CONFIGURÁVEIS)
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Obrigatória - Calibrada para Visual Corporativo/Premium */
+    --cor-preto: #0b0f12;         /* Fundo escuro premium, alta sofisticação */
+    --cor-branco: #ffffff;        /* Textos principais e contrastes limpos */
+    --cor-verde: #10b981;         /* Verde digital (Tecnologia e Sustentabilidade) */
+    --cor-laranja: #f97316;       /* Tons quentes de inovação e energia solar */
+    --cor-rosa: #ec4899;          /* Rosa vibrante para acentos e destaques digitais */
+    --cor-rosa-claro: #fbcfe8;    /* Rosa suave para fundos de caixas e respiros */
+    --cor-vermelho: #ef4444;      /* Vermelho focado em alertas e estados críticos */
+    --cor-amarelo: #eab308;       /* Amarelo dourado representando colheita e dados */
+    
+    /* Tons de Apoio Complementares */
+    --cor-cinza-painel: #161e24;  /* Elevação de elementos sobre o fundo preto */
+    --cor-texto-mutado: #94a3b8;  /* Legibilidade secundária equilibrada */
+    
+    /* Tipografia e Escala Fluida (clamp) */
+    --fonte-principal: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    --tamanho-h1: clamp(2.2rem, 5vw, 3.8rem);
+    --tamanho-h2: clamp(1.6rem, 3.5vw, 2.2rem);
+    --tamanho-body: clamp(1rem, 1vw + 0.8rem, 1.15rem);
+    
+    /* Estrutura dos Componentes (Grid de 8px e Curvaturas) */
+    --radius-premium: 16px;
+    --radius-botao: 8px;
+    --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --sombra-sutil: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --sombra-glow: 0 4px 20px rgba(16, 185, 129, 0.2);
+}
+
+/* Modo Claro Dinâmico (Invertido via Acessibilidade) */
+body.modo-claro {
+    --cor-preto: #f8fafc;
+    --cor-branco: #0f172a;
+    --cor-cinza-painel: #ffffff;
+    --cor-texto-mutado: #475569;
+    --sombra-sutil: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES BASE
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Classes Utilitárias de Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Destaques de palavras-chave baseados no briefing */
+strong {
+    color: var(--cor-verde);
+    font-weight: 700;
+}
+body.modo-claro strong {
+    color: #047857; /* Escurece um pouco no modo claro para manter contraste */
+}
+
+/* ==========================================================================
+   PAINEL FLUTUANTE DE ACESSIBILIDADE
+   ========================================================================== */
+.painel-acessibilidade {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    background-color: var(--cor-cinza-painel);
+    border: 2px solid var(--cor-verde);
+    border-radius: var(--radius-premium);
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    box-shadow: var(--sombra-sutil);
+}
+
+.painel-acessibilidade button {
+    background: var(--cor-preto);
+    color: var(--cor-branco);
+    border: 1px solid var(--cor-texto-mutado);
+    padding: 8px 12px;
+    border-radius: var(--radius-botao);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transicao-suave);
+}
+
+.painel-acessibilidade button:hover, 
+.painel-acessibilidade button:focus {
+    border-color: var(--cor-rosa);
+    background-color: var(--cor-rosa-claro);
+    color: #000;
+    outline: none;
+}
+
+.painel-acessibilidade .btn-parar {
+    border-color: var(--cor-vermelho);
+}
+.painel-acessibilidade .btn-parar:hover {
+    background-color: var(--cor-vermelho);
+    color: white;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(11,15,18,0.9) 30%, rgba(16,185,129,0.15) 100%), 
+                radial-gradient(circle at top right, var(--cor-laranja) 0%, transparent 40%);
+    padding: clamp(4rem, 10vw, 8rem) 5%;
+    border-bottom: 4px solid var(--cor-verde);
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-conteudo {
+    max-width: 800px;
+}
+
+.hero-tag {
+    display: inline-block;
+    color: var(--cor-laranja);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--cor-rosa);
+    padding-left: 8px;
+}
+
+.hero-titulo {
+    font-size: var(--tamanho-h1);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, var(--cor-branco), var(--cor-rosa-claro));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.modo-claro .hero-titulo {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--cor-branco);
+}
+
+.hero-subtitulo {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--cor-texto-mutado);
+    margin-bottom: 40px;
+    max-width: 700px;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn-primario, .btn-secundario {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-botao);
+    transition: var(--transicao-suave);
+    text-align: center;
+}
+
+.btn-primario {
+    background-color: var(--cor-verde);
+    color: #000;
+    box-shadow: var(--sombra-glow);
+}
+
+.btn-primario:hover {
+    transform: translateY(-2px);
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--cor-branco);
+    border: 2px solid var(--cor-texto-mutado);
+}
+
+.btn-secundario:hover {
+    border-color: var(--cor-rosa);
+    color: var(--cor-rosa);
+    background-color: rgba(236, 72, 153, 0.05);
+}
+
+/* ==========================================================================
+   LAYOUT E ESTRUTURA GRID (PRINCIPAL + SIDEBAR)
+   ========================================================================== */
+.layout-principal {
+    max-width: 1400px;
+    margin: 64px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) 420px;
+    gap: 64px;
+}
+
+@media (max-width: 1024px) {
+    .layout-principal {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        margin: 32px auto;
+    }
+}
+
+/* ==========================================================================
+   IMAGENS - REQUISITO ESTRUTURAL PREMIUM
+   ========================================================================== */
+.imagem {
+    width: 100%;
+    margin: 32px 0;
+    border-radius: var(--radius-premium);
+    overflow: hidden;
+    box-shadow: var(--sombra-sutil);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transicao-suave);
+    background: linear-gradient(45deg, #161e24, #0b0f12);
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transicao-suave);
+}
+
+/* Efeito Hover Sofisticado */
+.imagem:hover {
+    transform: scale(1.01);
+    border-color: var(--cor-verde);
+    box-shadow: var(--sombra-glow);
+}
+
+.imagem:hover img {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Texto alternativo visível estilizado caso a imagem falte */
+.imagem::before {
+    content: "Espaço Reservado: " attr(img);
+    position: absolute;
+    color: var(--cor-texto-mutado);
+    font-size: 0.85rem;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   CONTEÚDO TEXTUAL & COMPONENTE ACCORDION
+   ========================================================================== */
+.secao-texto h2 {
+    font-size: var(--tamanho-h2);
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--cor-cinza-painel);
+    padding-bottom: 12px;
+}
+
+.bloco-introducao p {
+    margin-bottom: 20px;
+    color: var(--cor-branco);
+}
+
+body.modo-claro .bloco-introducao p {
+    color: #1e293b;
+}
+
+/* Accordion Component */
+.accordion-container {
+    margin: 48px 0;
+    background-color: var(--cor-cinza-painel);
+    padding: 24px;
+    border-radius: var(--radius-premium);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.accordion-container h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--cor-amarelo);
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--cor-branco);
+    padding: 16px 8px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transicao-suave);
+}
+
+body.modo-claro .accordion-header {
+    color: var(--cor-branco);
+}
+
+.accordion-header:hover, .accordion-header:focus {
+    color: var(--cor-verde);
+    outline: none;
+}
+
+.accordion-icone {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: var(--cor-texto-mutado);
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icone {
+    transform: rotate(180deg);
+    color: var(--cor-verde);
+}
+
+.accordion-body {
+    padding: 0 8px 16px 8px;
+    color: var(--cor-texto-mutado);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   FORMULÁRIO LATERAL DE INSCRIÇÃO
+   ========================================================================== */
+.secao-lateral {
+    position: sticky;
+    top: 32px;
+    height: fit-content;
+}
+
+.card-formulario-container {
+    background: linear-gradient(180deg, var(--cor-cinza-painel) 0%, rgba(22,30,36,0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 4px solid var(--cor-laranja);
+    border-radius: var(--radius-premium);
+    padding: 32px;
+    box-shadow: var(--sombra-sutil);
+}
+
+.card-header-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--cor-branco);
+}
+
+.card-header-form p {
+    font-size: 0.95rem;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 24px;
+}
+
+.formulario-inscricao {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--cor-texto-mutado);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-campo input {
+    background-color: var(--cor-preto);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--cor-branco);
+    padding: 12px 16px;
+    border-radius: var(--radius-botao);
+    font-size: 1rem;
+    transition: var(--transicao-suave);
+    width: 100%;
+}
+
+.form-campo input:focus {
+    outline: none;
+    border-color: var(--cor-laranja);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.form-linha-tripla {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+}
+
+.btn-inscrever {
+    background-color: var(--cor-laranja);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius-botao);
+    cursor: pointer;
+    transition: var(--transicao-suave);
+    margin-top: 8px;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
+}
+
+.btn-inscrever:hover {
+    background-color: #ea580c;
+    transform: translateY(-1px);
+}
+
+.msg-sucesso {
+    margin-top: 16px;
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--cor-verde);
+    color: var(--cor-verde);
+    padding: 12px;
+    border-radius: var(--radius-botao);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.lateral-imagem {
+    margin-top: 24px;
+}
+
+/* ==========================================================================
+   ÁREA DE COMENTÁRIOS DA INTERAÇÃO
+   ========================================================================== */
+.area-comentarios {
+    margin-top: 64px;
+    border-top: 2px solid var(--cor-cinza-painel);
+    padding-top: 32px;
+}
+
+.area-comentarios h3 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.comentarios-sub {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.form-comentario-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.form-comentario-layout .campo-grupo {
+    width: 100%;
+}
+
+.form-comentario-layout textarea {
+    width: 100%;
+    background-color: var(--cor-cinza-painel);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--cor-branco);
+    padding: 16px;
+    border-radius: var(--radius-botao);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    resize: vertical;
+    transition: var(--transicao-suave);
+}
+
+.form-comentario-layout textarea:focus {
+    outline: none;
+    border-color: var(--cor-rosa);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.btn-comentar {
+    background: transparent;
+    border: 2px solid var(--cor-rosa);
+    color: var(--cor-rosa);
+    padding: 10px 24px;
+    font-weight: 600;
+    border-radius: var(--radius-botao);
+    cursor: pointer;
+    transition: var(--transicao-suave);
+}
+
+.btn-comentar:hover {
+    background-color: var(--cor-rosa);
+    color: white;
+}
+
+.lista-comentarios-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comentario-item {
+    background-color: var(--cor-cinza-painel);
+    padding: 16px 20px;
+    border-radius: var(--radius-botao);
+    border-left: 4px solid var(--cor-verde);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.comentario-meta {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.comentario-meta strong {
+    color: var(--cor-branco);
+}
+body.modo-claro .comentario-meta strong {
+    color: var(--cor-branco);
+}
+
+.comentario-meta span {
+    color: var(--cor-texto-mutado);
+}
+
+.comentario-item p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+body.modo-claro .comentario-item p {
+    color: #334155;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   RODAPÉ PREMIUM
+   ========================================================================== */
+.rodape-premium {
+    background-color: #06090b;
+    color: var(--cor-texto-mutado);
+    padding: 48px 24px;
+    margin-top: 128px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rodape-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.rodape-info {
+    max-width: 500px;
+}
+
+.frase-chave {
+    font-size: 1.1rem;
+    color: var(--cor-branco);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.rodape-referencias h4 {
+    color: var(--cor-amarelo);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.rodape-referencias ul {
+    list-style: none;
+}
+
+.rodape-referencias li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.rodape-referencias a {
+    color: var(--cor-texto-mutado);
+    text-decoration: none;
+    transition: var(--transicao-suave);
+}
+
+.rodape-referencias a:hover {
+    color: var(--cor-verde);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+    }
+    .painel-acessibilidade {
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        justify-content: space-between;
+    }
+}

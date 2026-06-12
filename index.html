@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo 2026 | Inteligência Artificial e Sustentabilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#conteudo-principal" class="sr-only">Pular para o conteúdo principal</a>
+
+    <div class="painel-acessibilidade" role="region" aria-label="Controles de Acessibilidade">
+        <button id="btn-aumentar-fonte" title="Aumentar tamanho do texto" aria-label="Aumentar tamanho do texto">A+</button>
+        <button id="btn-diminuir-fonte" title="Diminuir tamanho do texto" aria-label="Diminuir tamanho do texto">A-</button>
+        <button id="btn-alternar-contraste" title="Alternar Modo Escuro / Claro" aria-label="Alternar Modo Escuro / Claro">
+            <span class="icone-modo">◑</span>
+        </button>
+        <button id="btn-falar" title="Iniciar Leitura por Voz" aria-label="Iniciar Leitura por Voz">▶ Ouvir</button>
+        <button id="btn-parar-fala" title="Parar Leitura por Voz" aria-label="Parar Leitura por Voz" class="btn-parar" disabled>■ Parar</button>
+    </div>
+
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="hero-conteudo">
+                <span class="hero-tag">Tecnologia & Consciência</span>
+                <h1 class="hero-titulo">Agro e meio ambiente andam juntos</h1>
+                <p class="hero-subtitulo">Revolucionando o ecossistema do campo através de Inteligência Artificial, automação consciente e biotecnologia para moldar a agricultura do amanhã.</p>
+                <div class="hero-botoes">
+                    <a href="#conteudo-principal" class="btn-primario">Explorar Inovação</a>
+                    <a href="#seminario" class="btn-secundario">Inscrever-se no Seminário</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal" class="layout-principal">
+        
+        <section class="secao-texto">
+            <div class="bloco-introducao">
+                <h2>A Transformação Digital no Campo</h2>
+                <p>Com base na <strong>agricultura de alta precisão</strong> atual, o <strong>agro forte</strong> se reposiciona na vanguarda tecnológica. A incorporação de <strong>inteligência computacional</strong> e o uso estratégico de <strong>drones autônomos</strong> otimizam a aplicação de insumos nas lavouras. Contudo, o cenário exige evolução: é indispensável intensificar a transição para <strong>fertilizantes naturais</strong> e insumos biológicos.</p>
+                <p>Essa mudança estrutural impulsiona a produção de <strong>alimentos altamente saudáveis</strong> e assegura a integridade do <strong>meio ambiente</strong>. Como resultado prático, o agricultor consolida um <strong>negócio altamente lucrativo</strong> e, simultaneamente, atua como guardião dos nossos recursos vitais.</p>
+            </div>
+
+            <div class="imagem"> <img src="Foto1.png" alt="Drone de alta tecnologia sobrevoando plantação sustentável com sensores biológicos ativos"> </div>
+
+            <div class="accordion-container">
+                <h3>Diretrizes Críticas para o Futuro</h3>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="painel-1">
+                        <span>Desafios Atuais e Impacto Ambiental</span>
+                        <span class="accordion-icone">▼</span>
+                    </button>
+                    <div id="painel-1" class="accordion-body" hidden>
+                        <p>Para assegurar a soberania de um <strong>agro forte</strong> e a construção de um <strong>futuro sustentável</strong>, é imperativo reconhecer os riscos do manejo incorreto de defensivos químicos. O desmatamento descontrolado e a gestão negligente geram altos índices de <strong>poluição atmosférica</strong> e a severa <strong>contaminação de recursos hídricos</strong>. A mitigação imediata desses fatores é uma prioridade global.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="painel-2">
+                        <span>Conscientização e Práticas de Alta Performance</span>
+                        <span class="accordion-body-content" id="painel-2-content"></span>
+                        <span class="accordion-icone">▼</span>
+                    </button>
+                    <div id="painel-2" class="accordion-body" hidden>
+                        <p>Acelerar a <strong>conscientização dos produtores</strong> é o pilar central para a regeneração ambiental. A implementação de <strong>práticas agrícolas sustentáveis</strong> viabiliza a escalabilidade de alimentos limpos sem exaurir ou comprometer o solo e a biodiversidade. Esta sinergia garante resiliência econômica, saúde pública e a preservação do ecossistema para as <strong>próximas gerações</strong>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imagem"> <img src="Foto2.png" alt="Painel digital de Inteligência Artificial monitorando indicadores de solo e preservação florestal circundante"> </div>
+
+            <div class="area-comentarios">
+                <h3>Espaço de Interação</h3>
+                <p class="comentarios-sub">Participe do debate: Como a IA tem transformado a sustentabilidade na sua região?</p>
+                
+                <form id="form-comentario" class="form-comentario-layout">
+                    <div class="campo-grupo">
+                        <label for="txt-comentario" class="sr-only">Seu comentário</label>
+                        <textarea id="txt-comentario" placeholder="Escreva sua opinião, dúvida ou experiência sobre o Agro Sustentável..." required rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-comentar">Enviar Comentário</button>
+                </form>
+
+                <div id="lista-comentarios" class="lista-comentarios-container">
+                    <div class="comentario-item">
+                        <div class="comentario-meta"><strong>Carlos M. Silva</strong> <span>• Agrônomo</span></div>
+                        <p>Excelente abordagem! O uso de fertilizantes orgânicos associado ao mapeamento por drones reduziu em 35% nossos custos operacionais este ano.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside id="seminario" class="secao-lateral">
+            <div class="card-formulario-container">
+                <div class="card-header-form">
+                    <h3>Descubra o Futuro</h3>
+                    <p>Venha conhecer melhor como a IA pode ser uma aliada do Campo. Inscreva-se no nosso seminário on-line.</p>
+                </div>
+
+                <form id="form-inscricao" class="formulario-inscricao">
+                    <div class="form-campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Ex: Roberto Souz" required>
+                    </div>
+                    
+                    <div class="form-campo">
+                        <label for="email">E-mail Corporativo</label>
+                        <input type="email" id="email" placeholder="Ex: roberto@agro.com" required>
+                    </div>
+
+                    <div class="form-linha-tripla">
+                        <div class="form-campo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" placeholder="Ex: Maringá" required>
+                        </div>
+                        <div class="form-campo">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" placeholder="Ex: PR" maxlength="2" required>
+                        </div>
+                    </div>
+
+                    <div class="form-campo">
+                        <label for="pais">País</label>
+                        <input type="text" id="pais" value="Brasil" required>
+                    </div>
+
+                    <button type="submit" class="btn-inscrever">Garantir Minha Vaga no Seminário</button>
+                </form>
+                
+                <div id="mensagem-sucesso-form" class="msg-sucesso" hidden>
+                    Inscrição realizada com sucesso! O link de acesso foi enviado para o seu e-mail.
+                </div>
+            </div>
+
+            <div class="imagem lateral-imagem"> <img src="Foto3.png" alt="Produtor rural analisando métricas de produtividade verde em um tablet integrado ao campo"> </div>
+        </aside>
+
+    </main>
+
+    <footer class="rodape-premium">
+        <div class="rodape-container">
+            <div class="rodape-info">
+                <p class="frase-chave">AgroFuturo 2026 ° Conectando a inteligência tecnológica à terra de forma sustentável</p>
+            </div>
+            <div class="rodape-referencias">
+                <h4>Fontes &amp; Referências</h4>
+                <ul>
+                    <li><a href="https://gemini.google.com/app?hl=pt-BR" target="_blank" rel="noopener noreferrer">Plataforma Google Gemini (Engenharia de Prompt &amp; Conteúdo)</a></li>
+                    <li>Modelos Globais de Agricultura de Precisão e Inovação Verde Sustentável (2026).</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
